@@ -8,7 +8,8 @@ import kotlinx.android.synthetic.main.activity_name.*
 
   private var PLAYER1:String?=null
   private var PLAYER2:String?=null
-    const val KEY1="PlayersName"
+    const val KEY1="Player1"
+    const val KEY2="Player2"
 
 class NameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,9 +23,12 @@ class NameActivity : AppCompatActivity() {
             } else {
                 intent = Intent(this, PlayingBoard::class.java)
                 PLAYER1 = etPlayer1.text.toString()
-                PLAYER2 = etPlayer1.text.toString()
+                PLAYER2 = etPlayer2.text.toString()
+
                 val array= arrayOf(PLAYER1, PLAYER2)
                 intent.putExtra(KEY1,array)
+//                intent.putExtra(KEY1, PLAYER1)
+//                intent.putExtra(KEY2, PLAYER2)
                 startActivity(intent)
 
             }
